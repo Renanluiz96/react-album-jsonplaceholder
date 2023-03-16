@@ -1,21 +1,21 @@
 import './style.css' 
-import axios from "axios";
+//import axios from "axios";
 import { useEffect, useState } from 'react';
 import { Album } from '../../types/album';
+import http  from '../../api';
+import { Link } from 'react-router-dom';
 
 
 
 export const Post = () => {
-  const BASE = 'https://jsonplaceholder.typicode.com'
 
-  const [album, setAlbum] = useState<Album[]>([])
+   const [album, setAlbum] = useState<Album[]>([])
 
-  const loadAlbum = async () => {
-    let response = await axios.get(`${BASE}/albums`)
-    return setAlbum(response.data)
-  }
-  
-  console.log(setAlbum)
+    const loadAlbum = async () => {
+      await http.get("/albums").then(function (response) {
+        return setAlbum(response.data);
+      })
+    }
 
   useEffect(()=> {loadAlbum()}, [])
 
@@ -23,13 +23,15 @@ export const Post = () => {
     <div>
 
           total de Album {album.length}
-          <div>
+          <ul>
             {album.map((item, index)=> (
-              <div key={index} className="posts">
-                {item.title}
-              </div>
+              <li key={index} className="posts">
+                <Link to={'/listagem/'}>
+                  {item.title}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
 
     </div>
   )

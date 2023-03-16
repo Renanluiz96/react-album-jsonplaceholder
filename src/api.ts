@@ -1,10 +1,8 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
-const BASE = 'https://jsonplaceholder.typicode.com/'
+const base = 'https://jsonplaceholder.typicode.com'
+const http = axios.create({
+    baseURL: base
+})
 
-export const api = {
-    getAllPosts:async () => {
-        let response = await axios.get(`${BASE}/albums`)
-        return response.data
-    }
-}
+export default http;
