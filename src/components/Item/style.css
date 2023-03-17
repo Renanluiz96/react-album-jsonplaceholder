@@ -1,0 +1,13 @@
+.item {
+    text-decoration: none;
+    display: block;
+    color: black;
+    font-weight: 600;
+    border: 2px solid black;
+    max-width: 100%;
+    padding: 20px;
+    margin-top: 5px;
+}
+.item:hover {
+    background-color: rgb(238, 236, 236);
+}

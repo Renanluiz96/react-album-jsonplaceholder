@@ -10,7 +10,7 @@ type Props = {
 
 export const Item = ({ id, title}: Props)=> {
   return (
-    <Link to={`/album/${id}`}>
+    <Link to={`/album/${id}`} className="item">
         {title}
     </Link>
   )

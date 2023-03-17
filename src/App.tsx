@@ -1,7 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import { Album } from './pages/Album'
-import { Home } from './pages/Home'
+import { MainRoutes } from './routes/MainRoutes'
 
 function App() {
 
@@ -10,12 +8,7 @@ function App() {
     <div >
       <h1>Galeria de fotos</h1>
       <hr />
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/album/:id' element={<Album/>}/>
-
-
-      </Routes>
+      <MainRoutes />
 
     </div>
   )

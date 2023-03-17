@@ -9,10 +9,10 @@ export const api = {
         const req = await request('/albums');
         return req.data;
     },
-    // getAlbum: async (id: string) => {
-    //     const req = await request(`/albums/${id}`);
-    //     return req.data;
-    // },
+    getAlbum: async (id: string) => {
+        const req = await request(`/albums/${id}`);
+        return req.data;
+    },
     getPhotosFromAlbum: async (id: string) => {
         const req = await request(`/albums/${id}/photos`);
         return req.data;
