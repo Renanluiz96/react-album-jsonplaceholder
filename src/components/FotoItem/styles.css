@@ -1,11 +1,24 @@
 .fotocontainer {
+    display: inline-flex;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.fotocontainer li {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .fotocontainer img{
-
     padding: 10px;
     border: 2px solid black;
     margin-bottom: 20px; 
     margin-right: 20px;
+}
+
+@media (max-width: 407px) {
+    .fotocontainer li {
+        width: 380px;
+    }
 }

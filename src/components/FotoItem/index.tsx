@@ -8,10 +8,12 @@ type Props = {
 
 export const FotoItem = ({ data }: Props) => {
   return (
-    <div >
+    <ul className='fotocontainer'>
+      <li>
         <Link to={`/photo/${data.id}`}  className="fotos">
         <img src={data.thumbnailUrl} alt={data.title} />
         </Link>
-    </div>
+      </li>
+    </ul>
   )
 }

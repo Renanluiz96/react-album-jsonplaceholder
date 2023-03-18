@@ -41,9 +41,7 @@ export const Album = () => {
   return (
     <div>
         {loading && "Carregando"}
-        <br />
         <button onClick={handleBackButton}>Voltar</button>
-        <br />
         <h1>{albumInfo.title}</h1>
         <br />
         {fotos.map((item, index)=> (
